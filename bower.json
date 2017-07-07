@@ -1,7 +1,7 @@
 {
   "name": "install-proxy-dialog",
   "description": "A dialog to be shown when the user choose to use Chrome proxy extension and the extension is not installed",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache-2.0 OR CC-BY-4.0",
   "authors": [
     "The Advanced REST client authors <arc@mulesoft.com>"
