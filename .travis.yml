@@ -8,14 +8,19 @@ addons:
   sauce_connect: true
 script:
 - npm run lint
-- ./node_modules/.bin/polymer test --plugin sauce --job-name "install-proxy-dialog:${TRAVIS_BRANCH}" --build-number=${TRAVIS_BUILD_NUMBER}
+- ./node_modules/.bin/polymer test --plugin sauce --job-name "install-proxy-dialog:${TRAVIS_BRANCH}"
+  --build-number=${TRAVIS_BUILD_NUMBER}
 cache:
   directories:
   - bower_components
   - node_modules
 branches:
   only:
-    - stage
-    - develop
+  - stage
+  - develop
 after_success:
-  - node tasks/ci.js
+- node tasks/ci.js
+env:
+  global:
+  - secure: xJKViyBPYTkKqMWHxmiKl61AdQ7kjqOZO/OV9QVnOFFKQEPLWxfn8elZ+VzDggy5NnSYmJnInCtbneWFAewL47p5zP4ciPiXk36Ebju7udi5doZByqNgEtyX2tsBon/hyGMaEk97qstbTOPoe6THYUqp9qo5xzZrPXgMU6GddXcj9f00cS2CTPHBhsLHzuqH05l/NmcIHiCOSw8nPHEj9AP2vKpFjMXh7Awx5fBhmRhL5ByiOqyiRLoEXxrAuxawwdLzKF+36PbMASiiPw0r41XuQ73gR+VNFOLdrWWiUhRD2tgZdAhzb+M8FdEv6R7KLkCn5YQ3oFEWQN3zOtavj+mApUadLYbIuVhzjqFEKiT2OEIH8RKjtMy4bmaWSUDuqugI5Io2abIJQ96n8/On2F8FJhb1tFFKwyjhqHSrNpBCM2QE0oW+YhHuaWKXMfPQZxsyN/KB6DlTCortIbmxR7TegVlSiM4YlwQzmoxTqCmfYLeCNbLbXNZFmWzlco6FwZNyWdQrzZVenF56FYfxw+uiTTACeSW2mfeOv0bsIeCFlp5f2eRgPCCnF+SrPmjwEMVYsI1SJOEdOozpn74IprXle6zXn/0joNDEdpqVwE/jnTKedi10684YImOXlxobk34eTbUIuTpRecfC4Y/pMJIfUQ/dkm6uUl6LbAhsBtY=
+  - secure: lbTIQQhHDZEgh57XlHjpRF/ZN7JM3Hnd1ONSsuV7wiAeSaWIYyJJYBjN6Cen2xPIb4A+z+MYqTKDjvEdsuf4aShdWRDexegwNDjlU6xMH9hwVqgICCqgen0OIg81g22yeZx/3uyXmi5yEMkCYwtFeWQkqcHluLOJtlrWgw6RcjFS2XFyWh3bBn+Cpsxgxy4GpNvTqD+W2g3BbvJL6bSiV0rksBj2mgIjOmLfWEUs4d5xBdnKFP6A1jPQV5nEJFKh6v9jvfRi7LTIocrqT/iCifJugtZug5Y8JGY/KHeDgUw4Ajbg+pe6koybl5bI5EufSayjTmmsjbEEcf6SS0Zs1A4cmXFjGoZT+pZt2getNGvxrtbyoNVkORLYYVAhc13f7D4woZaelSnNpRdSocIAkSku1fD6ptBO3oWyttNV9JXNvbUS4xxJJGt1ROT8HWOXLzr382JTmB0fPMbSwfweiStLXdmljzvih3eJdv6YdHw84klAaDnfRLHp+Ru2Wzrg89fXvYyzU2m68PP5AtC6XZBL/AHj37aNoSt1ikNVDUOG0jZ9LAY8ZjMPLEf60OVd3dy/qv9OU0IzhV/Ciox6KhN8HaeqazQ/0h54S5D4QzcH0G7t4CFlupbzp/8OhRIMJQb5bT4J1rIU3E7PSHzHHt2LL3NCHPf41tm9SiM3vSI=
